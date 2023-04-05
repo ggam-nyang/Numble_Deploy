@@ -10,7 +10,7 @@ private class TempTest {
         val a = 1
         val b = a
 
-        println("test run")
+        println("test run retry")
         Assertions.assertThat(a).isEqualTo(b)
     }
 }
