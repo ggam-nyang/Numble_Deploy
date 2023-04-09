@@ -4,10 +4,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                cleanWs()
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ggam-nyang/Numble-Deploy.git']]])
+                git branch: 'main',
+                        credentialsId: 'github_access_token',
+                        url: 'https://github.com/ggam-nynag/Numble-Deploy.git'
             }
-        }
         stage('Build') {
             steps {
                 sh './gradlew clean build'
