@@ -15,11 +15,11 @@ pipeline {
                 echo "This is the first step in the Build Stage"
             }
         }
-//        stage('Deploy') {
-//            steps {
-//                sh 'java -jar build/libs/server-0.0.1-SNAPSHOT-plain.jar'
-//                echo "This is the first step in the Deploy Stage"
-//            }
-//        }
+        stage('Deploy') {
+            steps {
+                sh 'ansible-playbook /ansible/deploy_web_server_playbook.yml'
+                echo "This is the first step in the Deploy Stage"
+            }
+        }
     }
 }
