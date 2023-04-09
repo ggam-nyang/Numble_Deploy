@@ -1,0 +1,15 @@
+- hosts: spring-server
+  tasks:
+    - name: stop existing application
+      shell: systemctl stop my-application.service
+      become: true
+
+    - name: copy jar file
+      copy:
+        src: /var/lib/jenkins/workspace/my-job/target/my-application.jar
+        dest: /opt/my-application/my-application.jar
+      become: true
+
+    - name: start application
+      shell: systemctl start my-application.service
+      become: true
