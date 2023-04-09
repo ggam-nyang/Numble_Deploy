@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'git@github.com:ggam-nyang/Numble-Deploy.git'
+                cleanWs()
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ggam-nyang/Numble-Deploy.git']]])
             }
         }
         stage('Build') {
