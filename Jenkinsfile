@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'main',
                         credentialsId: 'github_access_token',
-                        url: 'https://github.com/ggam-nyang/Numble-Deploy.git'
+                        url: 'https://github.com/ggam-nyang/Numble_Deploy.git'
             }
         }
         stage('Build') {
