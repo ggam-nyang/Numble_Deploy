@@ -8,6 +8,7 @@ pipeline {
                         credentialsId: 'github_access_token',
                         url: 'https://github.com/ggam-nynag/Numble-Deploy.git'
             }
+        }
         stage('Build') {
             steps {
                 sh './gradlew clean build'
