@@ -1,6 +1,7 @@
 package numble.deploy.server.temp
 
 import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 private class TempTest {
@@ -11,6 +12,6 @@ private class TempTest {
         val b = a
 
         println("test run retry 2")
-        Assertions.assertThat(a).isEqualTo(b)
+        assertThat(a).isEqualTo(b)
     }
 }
